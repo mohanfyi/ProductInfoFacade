@@ -1,0 +1,16 @@
+{
+  "name": "ProductInfoFacade",
+  "version": "1.0.0",
+  "description": "Facade layer to encapsulate low level APIs.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "monitor": "nodemon app.js",
+    "deploy": "gcloud preview app deploy app.yaml"
+  },
+  "author": "RJ",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.0"
+  }
+}
