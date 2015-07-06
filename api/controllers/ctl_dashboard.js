@@ -59,7 +59,7 @@ function fnGetProductDetails(req, res) {
 						}
 					logger.info('product_details(JSON)=' + JSON.stringify(product_details));
 					product_details = {
-					    "clientinfo": [{"product_id_num":"2"},{"product_id_num":"2"}]
+					    "clientinfo": [{"product_id_num":2},{"product_id_num":2}]
 					    
 						}
 					logger.info('product_details(JSON2)=' + JSON.stringify(product_details));
