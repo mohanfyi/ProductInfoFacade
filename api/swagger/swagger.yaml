@@ -22,7 +22,7 @@ consumes:
 produces:
   - application/json
 paths:
-  /getdashboarddata:
+  /getProductDetails:
     # binds a127 app logic to a route
     x-swagger-router-controller: ctl_dashboard
     get:
@@ -32,9 +32,9 @@ paths:
       # used as the method name of the controller
       operationId: getdashboarddata
       parameters:
-        - name: clientid
+        - name: productnum
           in: query
-          description: The id of the client whose information needs to be fetched
+          description: The product num linked to the client
           required: true
           type: string
       responses:
