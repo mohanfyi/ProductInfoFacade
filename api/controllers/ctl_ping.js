@@ -40,6 +40,7 @@ module.exports = {
  */
 function fnPing(req, res) {
 	 logger.debug('Entering fnPing');
+	 logger.log('Entering fnPing');
 	 // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
 	 var str = 'This service is functioning normally!!';
 	 res.header('Access-Control-Allow-Origin', '*');
