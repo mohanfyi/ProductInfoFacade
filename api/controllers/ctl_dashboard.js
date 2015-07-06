@@ -51,8 +51,8 @@ function fnGetProductDetails(req, res) {
     					//plugin client info & product info to the product details model
     					
     					product_details = {
-					    "clientinfo": JSON.parse(product_detail_client_chunk)
-					}
+					    "clientinfo": fnGetArray(JSON.parse(product_detail_client_chunk))
+						}
 					
 					/*product_details = {
 					    
@@ -74,4 +74,10 @@ function fnGetProductDetails(req, res) {
     		}
     	});
     });
+}
+
+function fnGetArray(obj) {
+	var arr = Object.keys(obj).map(function(k) { return obj[k] });
+	console.log(arr);
+	return arr;
 }
