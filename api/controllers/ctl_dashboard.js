@@ -1,5 +1,5 @@
 var http = require('http');
-
+var logger = require('../../logger');
 
 module.exports = {
   //getdashboarddata: fnGetDashboardDataForClient,
@@ -26,6 +26,7 @@ function fnGetProductDetails(req, res) {
 
     	response.on("end", function(err) {
     		if(product_detail_chunk != null) {
+    			logger.info('product_detail_chunk=' + product_detail_chunk);
     			//now trigger client info API to fetch the client details based on productid#
     			var client_API_options = {
     				host: 'clientinfopoc.appspot.com',
@@ -38,6 +39,7 @@ function fnGetProductDetails(req, res) {
     				});
 
     				response.on("end", function(err) {
+    					logger.info('product_detail_client_chunk=' + product_detail_client_chunk);
     					//plugin client info & product info to the product details model
     					product_details.productinfo = JSON.parse(product_detail_chunk);
     					product_details.clientinfo = JSON.parse(product_detail_client_chunk);
