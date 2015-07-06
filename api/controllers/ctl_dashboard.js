@@ -1,3 +1,9 @@
+'use strict';
+/*
+ 'use strict' is not required but helpful for turning syntactical errors into true errors in the program flow
+ http://www.w3schools.com/js/js_strict.asp
+*/
+
 var http = require('http');
 var logger = require('../../logger');
 
@@ -10,6 +16,7 @@ module.exports = {
 /*Returns back the complete product details on providing the ProductNum
 This is what is being used for showing data on Dashboard after clubbing Product & Client info*/
 function fnGetProductDetails(req, res) {
+	logger.info('Received Request for productnum=' + req.query.productnum);
 	var product_num = req.query.productnum;
 	var product_detail_chunk = "";
 	var product_detail_client_chunk = "";
