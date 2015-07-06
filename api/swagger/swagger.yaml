@@ -96,7 +96,7 @@ definitions:
         loan_amt: 
           type: "string"
       xml: 
-        name: "ProductInfo"
+        name: "Productdata"
   clientdata:
       properties:
         product_id_num: 
@@ -123,16 +123,18 @@ definitions:
           type: "string"
         birth_dte: 
           type: "string"
+      xml: 
+        name: "Clientdata"
   ClientDashboardResponse:
       properties:
-        clientinfo:
-          type: "array"
-          items:
-            $ref: "#/definitions/clientdata"
         productinfo:
           type: "array"
           items:
             $ref: "#/definitions/productdata"
+        clientinfo:
+          type: "array"
+          items:
+            $ref: "#/definitions/clientdata"
       xml:
         name: "ClientDashboard"         
   PingResponse:
