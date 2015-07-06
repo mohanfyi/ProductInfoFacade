@@ -23,6 +23,10 @@ module.exports = app; // for testing
 
 app.use(require('./lib/appengine-handlers'));
 app.use(express.static('public'));
+app.use(function(err, req, res, next) {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
 
 var config = {
   appRoot: __dirname // required config
