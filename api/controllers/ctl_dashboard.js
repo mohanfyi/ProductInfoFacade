@@ -55,14 +55,14 @@ function fnGetProductDetails(req, res) {
 					    "productinfo": JSON.parse(product_detail_chunk)
 					}*/
 					
-					product_details = {
+				/*	product_details = {
 					    "clientinfo": {
 					    	"product_id_num":2
 					    },
 					    "productinfo": {
 					    	"product_id_num":2
 					    }
-					}
+					}*/
     					
     					//product_details.productinfo = product_detail_chunk;
     					//product_details.clientinfo = product_detail_client_chunk;
