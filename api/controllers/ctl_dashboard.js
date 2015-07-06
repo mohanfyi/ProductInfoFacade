@@ -27,8 +27,8 @@ function fnGetProductDetails(req, res) {
 	};
 
 	//res.send(JSON.stringify(product_details));
-	res.json(product_details);
-	/*
+	//res.json(product_details);
+	
     var request = http.get(options, function(response) {
     	
     	response.on("data", function(chunk) {
@@ -62,5 +62,5 @@ function fnGetProductDetails(req, res) {
     			});
     		}
     	});
-    });*/
+    });
 }
