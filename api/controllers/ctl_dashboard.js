@@ -69,9 +69,9 @@ function fnGetProductDetails(req, res) {
     					logger.info('product_details(JSON)=' + JSON.stringify(product_details));
     					logger.info('product_details=' + product_details);
     					res.setHeader('Access-Control-Allow-Origin', '*');
-    					res.setHeader('Content-Type', 'application/json');
+    					//res.setHeader('Content-Type', 'application/json');
     					//res.send(JSON.stringify(product_details));
-    					res.send(JSON.stringify(product_details));
+    					res.json(product_details);
     				})
     			});
     		}
