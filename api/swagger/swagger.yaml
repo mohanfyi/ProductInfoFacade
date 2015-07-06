@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   version: "0.0.1"
-  title: RJ Insurance Co. Facade
+  title: RJ Product Information Facade
 # during dev, should point to your local machine
 host: 130.211.118.83
 # basePath prefixes all resource paths 
