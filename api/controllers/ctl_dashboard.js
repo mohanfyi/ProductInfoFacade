@@ -51,8 +51,8 @@ function fnGetProductDetails(req, res) {
     					//plugin client info & product info to the product details model
     					
     					var product_details = {
-					    "productinfo": JSON.parse(product_detail_chunk),
-					    "clientinfo": JSON.parse(product_detail_client_chunk)
+					    "clientinfo": JSON.parse(product_detail_client_chunk),
+					    "productinfo": JSON.parse(product_detail_chunk)
 					}
     					
     					//product_details.productinfo = product_detail_chunk;
