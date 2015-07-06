@@ -100,13 +100,13 @@ definitions:
   clientdata:
       properties:
         product_id_num: 
-          type: "string"
+          type: "integer"
         client_id: 
-          type: "string"
+          type: "integer"
         client_type_cde: 
-          type: "string"
+          type: "integer"
         taxpayer_id: 
-          type: "string"
+          type: "integer"
         first_name: 
           type: "string"
         middle_name: 
@@ -116,7 +116,7 @@ definitions:
         org_name: 
           type: "string"
         role_type_cde: 
-          type: "string"
+          type: "integer"
         role_type_txt: 
           type: "string"
         email: 
