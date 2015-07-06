@@ -53,7 +53,7 @@ function fnGetProductDetails(req, res) {
     					product_details.clientinfo = JSON.parse(product_detail_client_chunk);
     					logger.info('product_details=' + product_details);
     					res.header('Access-Control-Allow-Origin', '*');
-    					res.json(product_details);
+    					res.json(JSON.stringify(product_details));
     					//res.send(JSON.stringify(product_details));
     					//res.send(JSON.stringify(product_details));
     				})
