@@ -27,7 +27,10 @@ function fnGetProductDetails(req, res) {
 	  path: '/?productnum=' + req.query.productnum
 	};
 
+	res.send(JSON.stringify(product_details));
+	/*
     var request = http.get(options, function(response) {
+    	
     	response.on("data", function(chunk) {
     		product_detail_chunk += chunk;
     	});
@@ -59,5 +62,5 @@ function fnGetProductDetails(req, res) {
     			});
     		}
     	});
-    });
+    });*/
 }
