@@ -51,7 +51,8 @@ function fnGetProductDetails(req, res) {
     					//plugin client info & product info to the product details model
     					product_details.productinfo = product_detail_chunk;
     					product_details.clientinfo = product_detail_client_chunk;
-    					logger.info('product_details=' + JSON.stringify(product_details));
+    					logger.info('product_details(JSON)=' + JSON.stringify(product_details));
+    					logger.info('product_details=' + product_details);
     					res.header('Access-Control-Allow-Origin', '*');
     					res.json(product_details);
     					//res.send(JSON.stringify(product_details));
