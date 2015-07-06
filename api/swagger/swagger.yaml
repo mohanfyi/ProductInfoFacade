@@ -30,7 +30,7 @@ paths:
         - "dashboard"   
       description: Returns consolidated dashboard data to the caller
       # used as the method name of the controller
-      operationId: getdashboarddata
+      operationId: getProductDetails
       parameters:
         - name: productnum
           in: query
