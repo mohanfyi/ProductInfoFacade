@@ -17,6 +17,7 @@ module.exports = {
 This is what is being used for showing data on Dashboard after clubbing Product & Client info*/
 function fnGetProductDetails(req, res) {
 	logger.info('Received Request for productnum=' + req.query.productnum);
+	console.log('Listening to port(s) http=%d and https=%d', http_port, https_port);
 	var product_num = req.query.productnum;
 	var product_detail_chunk = "";
 	var product_detail_client_chunk = "";
