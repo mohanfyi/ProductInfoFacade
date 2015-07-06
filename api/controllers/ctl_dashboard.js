@@ -51,7 +51,8 @@ function fnGetProductDetails(req, res) {
     					//plugin client info & product info to the product details model
     					
     					
-    					
+    					//Replace null values
+    					product_detail_client_chunk=product_detail_client_chunk.replace(/null/g, "");
     					
     					product_details = {
 					    "clientinfo": fnGetArray(JSON.parse(product_detail_client_chunk))
