@@ -52,6 +52,7 @@ function fnGetProductDetails(req, res) {
     					
     					product_details = {
 					    "clientinfo": fnGetArray(JSON.parse(product_detail_client_chunk))
+					    
 						}
 					
 					/*product_details = {
@@ -78,6 +79,6 @@ function fnGetProductDetails(req, res) {
 
 function fnGetArray(obj) {
 	var arr = Object.keys(obj).map(function(k) { return obj[k] });
-	console.log(arr);
+	logger.info("Created array-->\n" + arr + "\n<--\n");
 	return arr;
 }
