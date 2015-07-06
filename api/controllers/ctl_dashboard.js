@@ -21,13 +21,14 @@ function fnGetProductDetails(req, res) {
 	var product_num = req.query.productnum;
 	var product_detail_chunk = "";
 	var product_detail_client_chunk = "";
-	var product_details;// = {};
+	var product_details = {};
 	var options = {
 	  host: 'nmclvpoc.appspot.com',
 	  path: '/?productnum=' + req.query.productnum
 	};
 
-	res.send(JSON.stringify(product_details));
+	//res.send(JSON.stringify(product_details));
+	res.json(product_details);
 	/*
     var request = http.get(options, function(response) {
     	
