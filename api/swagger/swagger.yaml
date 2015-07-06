@@ -71,6 +71,58 @@ paths:
 
 # complex objects have schema definitions
 definitions:
+  productdata
+      properties:
+        product_id_num: 
+          type: "string"
+        product_num: 
+          type: "string"
+        product_type_cde:
+          type: "string"
+        payment_amount: 
+          type: "string"
+        payment_freq: 
+          type: "string"
+        owner_type_cde: 
+          type: "string"
+        plan_txt: 
+          type: "string"
+        benefit_amt: 
+          type: "string"
+        total_value: 
+          type: "string"
+        dividend_amt: 
+          type: "string"
+        loan_amt: 
+          type: "string"
+      xml: 
+        name: "ProductInfo"
+  clientdata
+      properties:
+        product_id_num: 
+          type: "string"
+        client_id: 
+          type: "string"
+        client_type_cde: 
+          type: "string"
+        taxpayer_id: 
+          type: "string"
+        first_name: 
+          type: "string"
+        middle_name: 
+          type: "string"
+        last_name: 
+          type: "string"
+        org_name: 
+          type: "string"
+        role_type_cde: 
+          type: "string"
+        role_type_txt: 
+          type: "string"
+        email: 
+          type: "string"
+        birth_dte: 
+          type: "string"
   Product: 
       properties: 
         product_id_num: 
@@ -118,7 +170,19 @@ definitions:
           items:
             $ref: "#/definitions/Product"
       xml: 
-        name: "Client"         
+        name: "Client"
+  ClientDashboardResponse:
+      properties:
+        clientinfo:
+          type: "array"
+          items:
+            $ref: "#/definitions/clientdata"
+        productinfo:
+          type: "array"
+          items:
+            $ref: "#/definitions/productdata"
+      xml:
+        name: "ClientDashboard"         
   DashboardResponse:
       properties:
         client:
