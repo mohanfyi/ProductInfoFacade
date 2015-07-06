@@ -57,9 +57,9 @@ function fnGetProductDetails(req, res) {
 					
 					product_details = {
 					    
-					    "productinfo": {
+					    "productinfo": [{
 					    	"product_id_num":"2"
-					    }
+					    }]
 					}
     					
     					//product_details.productinfo = product_detail_chunk;
