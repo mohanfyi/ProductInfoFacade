@@ -71,7 +71,7 @@ paths:
 
 # complex objects have schema definitions
 definitions:
-  productdata
+  productdata:
       properties:
         product_id_num: 
           type: "string"
@@ -97,7 +97,7 @@ definitions:
           type: "string"
       xml: 
         name: "ProductInfo"
-  clientdata
+  clientdata:
       properties:
         product_id_num: 
           type: "string"
