@@ -52,10 +52,16 @@ function fnGetProductDetails(req, res) {
     					
     					
     					//Replace null values
-    					product_detail_client_chunk=product_detail_client_chunk.replace(/null/g, "");
+    					//product_detail_client_chunk=product_detail_client_chunk.replace(/null/g, "");
+    					
+    					var arr = fnGetArray(JSON.parse(product_detail_client_chunk));
+    					
+    					/*arr.forEach(function(entry) {
+    						if (entry.);
+					})*/
     					
     					product_details = {
-					    "clientinfo": fnGetArray(JSON.parse(product_detail_client_chunk))
+					    "clientinfo": arr
 					    
 						}
 					logger.info('product_details(JSON)=' + JSON.stringify(product_details));
