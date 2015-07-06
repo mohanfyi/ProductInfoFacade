@@ -59,7 +59,7 @@ function fnGetProductDetails(req, res) {
     					//product_details.clientinfo = product_detail_client_chunk;
     					logger.info('product_details(JSON)=' + JSON.stringify(product_details));
     					logger.info('product_details=' + product_details);
-    					res.header('Access-Control-Allow-Origin', '*');
+    					res.setHeader('Access-Control-Allow-Origin', '*');
     					res.setHeader('Content-Type', 'application/json');
     					//res.send(JSON.stringify(product_details));
     					res.send(JSON.stringify(product_details));
