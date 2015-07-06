@@ -50,9 +50,18 @@ function fnGetProductDetails(req, res) {
     					logger.info('product_detail_client_chunk=' + product_detail_client_chunk);
     					//plugin client info & product info to the product details model
     					
-    					var product_details = {
+    					/*product_details = {
 					    "clientinfo": JSON.parse(product_detail_client_chunk),
 					    "productinfo": JSON.parse(product_detail_chunk)
+					}*/
+					
+					product_details = {
+					    "clientinfo": {
+					    	"product_id_num":2
+					    },
+					    "productinfo": {
+					    	"product_id_num":2
+					    }
 					}
     					
     					//product_details.productinfo = product_detail_chunk;
