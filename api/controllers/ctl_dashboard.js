@@ -20,11 +20,11 @@ function fnGetProductDetails(req, res) {
 	var product_num = req.query.productnum;
 	var product_detail_chunk = "";
 	var product_detail_client_chunk = "";
-	var product_details = {};
+	var product_details;// = {};
 	var options = {
-          host: 'nmclvpoc.appspot.com',
-          path: '/?productnum=' + req.query.productnum
-    };
+	  host: 'nmclvpoc.appspot.com',
+	  path: '/?productnum=' + req.query.productnum
+	};
 
     var request = http.get(options, function(response) {
     	response.on("data", function(chunk) {
@@ -52,6 +52,7 @@ function fnGetProductDetails(req, res) {
     					product_details.clientinfo = JSON.parse(product_detail_client_chunk);
     					res.header('Access-Control-Allow-Origin', '*');
     					//res.json(product_details);
+    					//res.send(JSON.stringify(product_details));
     					res.send(JSON.stringify(product_details));
     				})
     			});
