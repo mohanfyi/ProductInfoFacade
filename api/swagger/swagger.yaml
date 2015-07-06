@@ -123,54 +123,6 @@ definitions:
           type: "string"
         birth_dte: 
           type: "string"
-  Product: 
-      properties: 
-        product_id_num: 
-          type: "string"
-        product_num: 
-          type: "string"
-        product_type_cde: 
-          type: "string"
-        role_type_txt: 
-          type: "string"
-        payment_amount: 
-          type: "string"
-        payment_freq: 
-          type: "string"
-        owner_type_cde: 
-          type: "string"
-        plan_txt: 
-          type: "string"
-        benefit_amt: 
-          type: "string"
-        total_value: 
-          type: "string"
-        dividend_amt: 
-          type: "string"
-        loan_amt: 
-          type: "string"
-      xml: 
-        name: "Product"
-  Client: 
-      properties: 
-        client_id: 
-          type: "string"
-        client_type_cde: 
-          type: "string"
-        taxpayer_id: 
-          type: "string"
-        full_name: 
-          type: "string"
-        email: 
-          type: "string"
-        birth_dte: 
-          type: "string"
-        products:
-          type: "array"
-          items:
-            $ref: "#/definitions/Product"
-      xml: 
-        name: "Client"
   ClientDashboardResponse:
       properties:
         clientinfo:
@@ -183,14 +135,6 @@ definitions:
             $ref: "#/definitions/productdata"
       xml:
         name: "ClientDashboard"         
-  DashboardResponse:
-      properties:
-        client:
-          type: "array"
-          items:
-            $ref: "#/definitions/Client"
-      xml:
-        name: "Dashboard" 
   PingResponse:
     required:
       - message
