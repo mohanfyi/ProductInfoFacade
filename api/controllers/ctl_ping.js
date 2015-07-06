@@ -4,6 +4,8 @@
  http://www.w3schools.com/js/js_strict.asp
 */
 
+
+
 /*
  Modules make it possible to import JavaScript files into your application.  Modules are imported
  using 'require' statements that give you a reference to the module.
@@ -12,6 +14,7 @@
  */
 var util = require('util');
 var http = require('http');
+var logger = require('../../logger');
 
 /*
  Once you 'require' a module you can reference the things that it exports.  These are defined in module.exports.
@@ -36,10 +39,12 @@ module.exports = {
   Param 2: a handle to the response object
  */
 function fnPing(req, res) {
-  // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
-    var str = 'This service is functioning normally!!';
- res.header('Access-Control-Allow-Origin', '*');
-  // this sends back a JSON response which is a single string
-  res.json(str);
+	 logger.debug('Entering fnPing');
+	 // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
+	 var str = 'This service is functioning normally!!';
+	 res.header('Access-Control-Allow-Origin', '*');
+	 // this sends back a JSON response which is a single string
+	 logger.debug('Exiting fnPing');
+	 res.json(str);
 }
 
