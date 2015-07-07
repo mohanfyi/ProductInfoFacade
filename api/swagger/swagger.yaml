@@ -1,16 +1,17 @@
 swagger: "2.0"
+################################################################################
+#                              API Information                                 #
+################################################################################
 info:
   version: "0.0.1"
   title: RJ Product Information Facade
 # during dev, should point to your local machine
+################################################################################
+#                  Host, Base Path, Schemes and Content Types                  #
+################################################################################
 host: 130.211.118.83
 # basePath prefixes all resource paths 
 basePath: /v1
-#
-tags:
-  -
-    name: "dashboard"
-# 
 schemes:
   # tip: remove http to make production-grade
   - http
@@ -21,6 +22,29 @@ consumes:
 # format of the responses to the client (Accepts)
 produces:
   - application/json
+################################################################################
+#                                   Tags                                       #
+################################################################################
+tags:
+  -
+    name: "dashboard"
+################################################################################
+#                                   Parameters                                 #
+################################################################################
+parameters:
+  client-id:
+    name: client-id
+    in: path
+    description: The client identifier number
+    type: number
+  tag-name:
+    name: tag-name
+    in: path
+    description: Tag name
+    type: string  
+################################################################################
+#                                           Paths                              #
+################################################################################  
 paths:
   /getProductDetails:
     # binds a127 app logic to a route
@@ -48,6 +72,28 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
+  /client/{client-id}/dashboard:
+    # binds a127 app logic to a route
+    parameters:
+      - $ref: '#/parameters/client-id'    
+    x-swagger-router-controller: ctl_dashboard
+    get:
+      tags:
+        - "dashboard"   
+      description: Returns consolidated dashboard data to the caller
+      # used as the method name of the controller
+      operationId: getProductDetails
+      responses:
+        200:
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/ClientDashboardResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"            
   /ping:
     # binds a127 app logic to a route
     x-swagger-router-controller: ctl_ping
@@ -68,7 +114,9 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
-
+################################################################################
+#                                 Definitions                                  #
+################################################################################
 # complex objects have schema definitions
 definitions:
   productdata:
