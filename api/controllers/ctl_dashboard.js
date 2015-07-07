@@ -62,7 +62,9 @@ function fnGetProductDetails(req, res) {
     						if (entry.org_name == null)
     							 entry.org_name = "";
 							});
-    					
+    						if (entry.client_type_cde == null)
+    							 entry.client_type_cde = 0;
+							});
     					product_details = {
 					    "clientinfo": arr
 					    
