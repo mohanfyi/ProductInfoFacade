@@ -58,9 +58,9 @@ function fnGetProductDetails(req, res) {
     					
     					arr.forEach(function(entry) {
     						if (entry.middle_name == null)
-    							 entry.middle_name  "";
+    							 entry.middle_name =  "";
     						if (entry.org_name == null)
-    							 entry.org_name  "";
+    							 entry.org_name = "";
 							});
     					
     					product_details = {
