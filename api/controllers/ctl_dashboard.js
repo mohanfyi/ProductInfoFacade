@@ -10,8 +10,15 @@ var logger = require('../../logger');
 module.exports = {
   //getdashboarddata: fnGetDashboardDataForClient,
   getProductDetails: fnGetProductDetails,
+  getProductDetails1: fnGetProductDetails1,
 
 };
+
+/*Returns back the complete product details on providing the ProductNum
+This is what is being used for showing data on Dashboard after clubbing Product & Client info*/
+function fnGetProductDetails1(req, res) {
+	logger.info('Received Request for productnum=' + req.query.productnum);
+}
 
 /*Returns back the complete product details on providing the ProductNum
 This is what is being used for showing data on Dashboard after clubbing Product & Client info*/
