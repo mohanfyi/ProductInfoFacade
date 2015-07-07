@@ -54,9 +54,9 @@ function fnGetProductDetails(req, res) {
     					//Replace null values
     					//product_detail_client_chunk=product_detail_client_chunk.replace(/null/g, "");
     					
-    					var arr = fnGetArray(JSON.parse(product_detail_client_chunk));
-    					
-    					arr.forEach(function(entry) {
+    					var arrClient = fnGetArray(JSON.parse(product_detail_client_chunk));
+    					var arrProduct = fnGetArray(JSON.parse(product_detail_chunk));
+    					arrClient.forEach(function(entry) {
     						if (entry.middle_name == null)
     							 entry.middle_name =  "";
     						if (entry.org_name == null)
@@ -66,8 +66,8 @@ function fnGetProductDetails(req, res) {
     							 entry.client_type_cde = 0;
 					});
     					product_details = {
-					    "clientinfo": arr
-					    
+					    "clientinfo": arrClient,
+					    "productinfo": arrProduct
 						}
 					logger.info('product_details(JSON)=' + JSON.stringify(product_details));
 					/*product_details = {
