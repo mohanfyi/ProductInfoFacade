@@ -56,9 +56,12 @@ function fnGetProductDetails(req, res) {
     					
     					var arr = fnGetArray(JSON.parse(product_detail_client_chunk));
     					
-    					/*arr.forEach(function(entry) {
-    						if (entry.);
-					})*/
+    					arr.forEach(function(entry) {
+    						if (entry.middle_name == null)
+    							 entry.middle_name  "";
+    						if (entry.org_name == null)
+    							 entry.org_name  "";
+							});
     					
     					product_details = {
 					    "clientinfo": arr
