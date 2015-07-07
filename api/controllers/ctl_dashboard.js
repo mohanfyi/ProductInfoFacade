@@ -18,6 +18,7 @@ module.exports = {
 This is what is being used for showing data on Dashboard after clubbing Product & Client info*/
 function fnGetProductDetails1(req, res) {
 	logger.info('Received Request for productnum=' + req.param.productnum);
+	res.json("thanks!");
 }
 
 /*Returns back the complete product details on providing the ProductNum
