@@ -82,7 +82,7 @@ paths:
         - "dashboard"   
       description: Returns consolidated dashboard data to the caller
       # used as the method name of the controller
-      operationId: getProductDetails
+      operationId: getProductDetails1
       responses:
         200:
           description: Success
