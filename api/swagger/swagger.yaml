@@ -83,7 +83,11 @@ paths:
       # used as the method name of the controller
       operationId: getProductDetails1
       parameters:
-        - $ref: '#/parameters/productnum' 
+        - name: productnum
+          in: path
+          description: The product num linked to the client
+          required: true
+          type: string
       responses:
         200:
           description: Success
