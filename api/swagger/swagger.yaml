@@ -36,6 +36,7 @@ parameters:
     name: productnum
     in: path
     description: The product number
+    required: true
     type: number
   tag-name:
     name: tag-name
