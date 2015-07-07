@@ -32,10 +32,10 @@ tags:
 #                                   Parameters                                 #
 ################################################################################
 parameters:
-  client-id:
-    name: client-id
+  productnum:
+    name: productnum
     in: path
-    description: The client identifier number
+    description: The product number
     type: number
   tag-name:
     name: tag-name
@@ -72,10 +72,10 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
-  /client/{client-id}/dashboard:
+  /client/{productnum}/dashboard:
     # binds a127 app logic to a route
     parameters:
-      - $ref: '#/parameters/client-id'    
+      - $ref: '#/parameters/productnum'    
     x-swagger-router-controller: ctl_dashboard
     get:
       tags:
