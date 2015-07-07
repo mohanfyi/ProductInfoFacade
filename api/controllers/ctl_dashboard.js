@@ -10,22 +10,14 @@ var logger = require('../../logger');
 module.exports = {
   //getdashboarddata: fnGetDashboardDataForClient,
   getProductDetails: fnGetProductDetails,
-  getProductDetails1: fnGetProductDetails1,
-
 };
 
 /*Returns back the complete product details on providing the ProductNum
 This is what is being used for showing data on Dashboard after clubbing Product & Client info*/
-function fnGetProductDetails1(req, res) {
-	logger.info('Received Request for productnum=' + req.swagger.params.productnum.value);
-	res.json("thanks!");
-}
-
-/*Returns back the complete product details on providing the ProductNum
-This is what is being used for showing data on Dashboard after clubbing Product & Client info*/
 function fnGetProductDetails(req, res) {
-	logger.info('Received Request for productnum=' + req.query.productnum);
-	var product_num = req.query.productnum;
+	//var product_num = req.query.productnum;
+	var product_num = req.swagger.params.productnum.value;
+	logger.info('Received Request for productnum=' + product_num);
 	var product_detail_chunk = "";
 	var product_detail_client_chunk = "";
 	var product_details = {};
@@ -33,6 +25,7 @@ function fnGetProductDetails(req, res) {
 	  host: 'nmclvpoc.appspot.com',
 	  path: '/?productnum=' + req.query.productnum
 	};
+	
 
     var request = http.get(options, function(response) {
     	
