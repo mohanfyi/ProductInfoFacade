@@ -37,12 +37,7 @@ parameters:
     in: path
     description: The product number
     required: true
-    type: number
-  tag-name:
-    name: tag-name
-    in: path
-    description: Tag name
-    type: string  
+    type: integer
 ################################################################################
 #                                           Paths                              #
 ################################################################################  
@@ -57,11 +52,7 @@ paths:
       # used as the method name of the controller
       operationId: getProductDetails
       parameters:
-        - name: productnum
-          in: path
-          description: The product num linked to the client
-          required: true
-          type: integer
+        - $ref: '#/parameters/productnum'
       responses:
         200:
           description: Success
