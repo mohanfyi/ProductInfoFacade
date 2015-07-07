@@ -74,27 +74,27 @@ definitions:
   productdata:
       properties:
         product_id_num: 
-          type: "string"
+          type: "integer"
         product_num: 
-          type: "string"
+          type: "integer"
         product_type_cde:
-          type: "string"
+          type: "integer"
         payment_amount: 
-          type: "string"
+          type: "integer"
         payment_freq: 
           type: "string"
         owner_type_cde: 
-          type: "string"
+          type: "integer"
         plan_txt: 
           type: "string"
         benefit_amt: 
-          type: "string"
+          type: "integer"
         total_value: 
-          type: "string"
+          type: "integer"
         dividend_amt: 
-          type: "string"
+          type: "integer"
         loan_amt: 
-          type: "string"
+          type: "integer"
       xml: 
         name: "Productdata"
   clientdata:
