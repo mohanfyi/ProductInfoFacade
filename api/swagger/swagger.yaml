@@ -87,7 +87,7 @@ paths:
           in: path
           description: The product num linked to the client
           required: true
-          type: string
+          type: integer
       responses:
         200:
           description: Success
