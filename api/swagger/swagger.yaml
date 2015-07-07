@@ -47,32 +47,6 @@ parameters:
 #                                           Paths                              #
 ################################################################################  
 paths:
-  /getProductDetails:
-    # binds a127 app logic to a route
-    x-swagger-router-controller: ctl_dashboard
-    get:
-      tags:
-        - "dashboard"   
-      description: Returns consolidated dashboard data to the caller
-      # used as the method name of the controller
-      operationId: getProductDetails
-      parameters:
-        - name: productnum
-          in: query
-          description: The product num linked to the client
-          required: true
-          type: string
-      responses:
-        200:
-          description: Success
-          schema:
-            # a pointer to a definition
-            $ref: "#/definitions/ClientDashboardResponse"
-        # responses may fall through to errors
-        default:
-          description: Error
-          schema:
-            $ref: "#/definitions/ErrorResponse"
   /client/{productnum}/dashboard:
     # binds a127 app logic to a route
     x-swagger-router-controller: ctl_dashboard
@@ -81,7 +55,7 @@ paths:
         - "dashboard"   
       description: Returns consolidated dashboard data to the caller
       # used as the method name of the controller
-      operationId: getProductDetails1
+      operationId: getProductDetails
       parameters:
         - name: productnum
           in: path
