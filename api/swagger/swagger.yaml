@@ -75,7 +75,7 @@ paths:
   /client/{productnum}/dashboard:
     # binds a127 app logic to a route
     parameters:
-      - $ref: '#/parameters/productnum'    
+      $ref: '#/parameters/productnum'    
     x-swagger-router-controller: ctl_dashboard
     get:
       tags:
