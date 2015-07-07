@@ -23,7 +23,7 @@ function fnGetProductDetails(req, res) {
 	var product_details = {};
 	var options = {
 	  host: 'nmclvpoc.appspot.com',
-	  path: '/?productnum=' + req.query.productnum
+	  path: '/?productnum=' + product_num
 	};
 	
 
