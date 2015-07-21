@@ -150,19 +150,19 @@ definitions:
         product_num: 
           type: "integer"
         market_rate: 
-          type: "float"
+          type: "number"
         stock_name: 
           type: "string"
         position_quantity_amt: 
-          type: "float"          
+          type: "number"          
         position_market_amt: 
-          type: "float"
+          type: "number"
         total_market_amt: 
-          type: "float"          
+          type: "number"          
         standard_asset_class: 
           type: "string"
         asset_allocation_amount: 
-          type: "float"           
+          type: "number"           
         asset_allocation_per: 
           type: "integer"
       xml: 
