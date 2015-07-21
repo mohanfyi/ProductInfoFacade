@@ -109,8 +109,10 @@ function fnGetProductDetails(req, res) {
 		                        position_detail_chunk +=chunk;		
 		                    });		
 		                    response.on("end", function(err) {		
-		                        async_counter = async_counter - 1;		
-		                        product_details.position_info = JSON.parse(position_detail_chunk);		
+		                        async_counter = async_counter - 1;
+		                        var arrPosition = fnGetArray(JSON.parse(position_detail_chunk));
+		                        //product_details.position_info = JSON.parse(position_detail_chunk);		
+		                        product_details.position_info = arrPosition;		
 		                        checkStatus(async_counter,res);		
 		                    })		
                 	});
@@ -126,7 +128,8 @@ function fnGetProductDetails(req, res) {
     function checkStatus() {		
         if(async_counter == 0) {		
             res.header('Access-Control-Allow-Origin', '*');		
-            res.send(JSON.stringify(product_details));     		
+            //res.send(JSON.stringify(product_details));  
+            res.json(product_details); //New
         }		
     }
     //new
