@@ -20,7 +20,9 @@ function fnGetProductDetails(req, res) {
 	logger.info('Received Request for productnum=' + product_num);
 	var product_detail_chunk = "";
 	var product_detail_client_chunk = "";
+	var position_detail_chunk = "";
 	var product_details = {};
+	var async_counter = 2;
 	var options = {
 	  host: 'nmclvpoc.appspot.com',
 	  path: '/?productnum=' + product_num
@@ -41,6 +43,11 @@ function fnGetProductDetails(req, res) {
     				host: 'clientinfopoc.appspot.com',
           			path: '/?productidnum=' + JSON.parse(product_detail_chunk)[0].product_id_num
     			};
+    			
+    			var position_API_options = {		
+                    		host: 'fund-info.appspot.com',		
+                    		path: '/?productnum=' + product_num		
+                	};
 
     			var product_detail_response = http.get(client_API_options, function(response) {
     				response.on("data", function(chunk) {
@@ -51,6 +58,7 @@ function fnGetProductDetails(req, res) {
     					logger.info('product_detail_client_chunk=' + product_detail_client_chunk);
     					//plugin client info & product info to the product details model
     					
+    					async_counter = async_counter - 1;
     					
     					//Replace null values
     					//product_detail_client_chunk=product_detail_client_chunk.replace(/null/g, "");
@@ -87,15 +95,41 @@ function fnGetProductDetails(req, res) {
     					//product_details.clientinfo = product_detail_client_chunk;
     					logger.info('product_details(JSON)=' + JSON.stringify(product_details));
     					logger.info('product_details=' + product_details);
-    					res.setHeader('Access-Control-Allow-Origin', '*');
+    					//res.setHeader('Access-Control-Allow-Origin', '*'); // New
     					//res.setHeader('Content-Type', 'application/json');
     					//res.send(JSON.stringify(product_details));
-    					res.json(product_details);
+    					//res.json(product_details); //New
+    					checkStatus(async_counter,res);
     				})
     			});
+    			
+    			//new
+    			var position_detail_response = http.get(position_API_options, function(response) {		
+		                    response.on("data", function(chunk) {		
+		                        position_detail_chunk +=chunk;		
+		                    });		
+		                    response.on("end", function(err) {		
+		                        async_counter = async_counter - 1;		
+		                        product_details.position_info = JSON.parse(position_detail_chunk);		
+		                        checkStatus(async_counter,res);		
+		                    })		
+                	});
+    			//new
+    			
     		}
     	});
+    	
+    	
     });
+    
+    //new 
+    function checkStatus() {		
+        if(async_counter == 0) {		
+            res.header('Access-Control-Allow-Origin', '*');		
+            res.send(JSON.stringify(product_details));     		
+        }		
+    }
+    //new
 }
 
 function fnGetArray(obj) {
