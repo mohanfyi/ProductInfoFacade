@@ -143,6 +143,30 @@ definitions:
           type: "string"
       xml: 
         name: "Clientdata"
+  positiondata:
+      properties:
+        position_id: 
+          type: "integer"
+        product_num: 
+          type: "integer"
+        market_rate: 
+          type: "float"
+        stock_name: 
+          type: "string"
+        position_quantity_amt: 
+          type: "float"          
+        position_market_amt: 
+          type: "float"
+        total_market_amt: 
+          type: "float"          
+        standard_asset_class: 
+          type: "string"
+        asset_allocation_amount: 
+          type: "float"           
+        asset_allocation_per: 
+          type: "integer"
+      xml: 
+        name: "Positiondata"        
   ClientDashboardResponse:
       properties:
         productinfo:
@@ -153,6 +177,10 @@ definitions:
           type: "array"
           items:
             $ref: "#/definitions/clientdata"
+        positioninfo:
+          type: "array"
+          items:
+            $ref: "#/definitions/positiondata"
       xml:
         name: "ClientDashboard"         
   PingResponse:
