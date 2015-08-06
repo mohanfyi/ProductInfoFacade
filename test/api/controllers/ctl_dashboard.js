@@ -30,7 +30,7 @@ describe('controllers', function() {
 
       it('should accept a name parameter and return a JSON string', function(done) {
         request(server)
-          .get('/v1/client/101/dashboard')
+          .get('/v1/client/100/dashboard')
           //.query({ clientid: 100})
           .set('Accept', 'application/json')
           .expect('Content-Type', /json/)
