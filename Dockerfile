@@ -1,16 +1,14 @@
-#	Copyright 2015, Google, Inc. 
-# Licensed under the Apache License, Version 2.0 (the "License"); 
-# you may not use this file except in compliance with the License. 
-# You may obtain a copy of the License at 
-#  
-#    http://www.apache.org/licenses/LICENSE-2.0 
-#  
-# Unless required by applicable law or agreed to in writing, software 
-# distributed under the License is distributed on an "AS IS" BASIS, 
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-# See the License for the specific language governing permissions and 
-# limitations under the License.
-#
-# [START docker]
-FROM google/nodejs-runtime
-# [END docker]
+# Dockerfile extending the generic Node image with application files for a
+# single application.
+FROM gcr.io/google_appengine/nodejs
+
+# Uncomment and customize these if you're copying this by hand (use "app
+# gen-config" to generate a Dockerfile.
+# ADD package.json npm-shrinkwrap.json* /app/
+# RUN npm install
+# ADD . /app
+COPY package.json /app/
+RUN npm install
+COPY . /app/
+EXPOSE  8080
+CMD npm start
