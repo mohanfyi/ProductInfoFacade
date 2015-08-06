@@ -24,7 +24,8 @@ function fnGetProductDetails(req, res) {
 	var product_details = {};
 	var async_counter = 2;
 	var options = {
-	  host: 'nmclvpoc.appspot.com',
+	  host: '104.154.61.252',
+	  port: 8080,
 	  path: '/?productnum=' + product_num
 	};
 	
@@ -40,12 +41,14 @@ function fnGetProductDetails(req, res) {
     			logger.info('product_detail_chunk=' + product_detail_chunk);
     			//now trigger client info API to fetch the client details based on productid#
     			var client_API_options = {
-    				host: 'clientinfopoc.appspot.com',
+    				host: '104.197.3.27',
+    				port: 8080,
           			path: '/?productidnum=' + JSON.parse(product_detail_chunk)[0].product_id_num
     			};
     			
     			var position_API_options = {		
-                    		host: 'fund-info.appspot.com',		
+                    		host: '146.148.47.97',
+                    		port: 8080,
                     		path: '/?productnum=' + product_num		
                 	};
 
