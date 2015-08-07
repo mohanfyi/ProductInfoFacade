@@ -20,6 +20,10 @@ var path = require('path');
 module.exports = {
   http_port: process.env.PORT || '8080',
   https_port: process.env.PORTS || '4430',
+  
+  client_info_host: '104.197.3.27',
+  product_info_host: '104.154.61.252',
+  fund_info_host: '146.148.47.97',
 
   /* Secret is used by sessions to encrypt the cookie */
   secret: 'your-secret-here',
